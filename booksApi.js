@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const { Pool } = require("pg");
 
@@ -8,7 +9,7 @@ const pool = new Pool({
   user: "postgres",
   host: "localhost",
   database: "booksdb",
-  password: "1234",
+  password: process.env.DB_PASSWORD,
   port: 5432,
 });
 
